@@ -1,0 +1,13 @@
+//
+//  Common.xcconfig
+//  PicsNearMe
+//
+//  Created by Derrick Ho on 3/4/16.
+//  Copyright © 2016 dnthome. All rights reserved.
+//
+
+BASE_URL="https://api.instagram.com/"
+QUERY_TYPE="v1/locations/search"
+//?lat=48.858844&lng=2.294351&access_token=
+
+ACCESS_TOKEN="510573486.ab7d4b6.d8b155be5d1a47c78f72616b4d942e8d"
