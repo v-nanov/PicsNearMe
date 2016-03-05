@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 class PNPicCellView: UICollectionViewCell {
 	let nibName = "PNPicCellView"
-	@IBOutlet var image: UIImageView!
+	@IBOutlet var imageView: UIImageView!
 	@IBOutlet var usernameLabel: UILabel!
 	@IBOutlet var distanceLabel: UILabel!
 	
@@ -20,9 +20,8 @@ class PNPicCellView: UICollectionViewCell {
 		set { self.usernameLabel.text = newValue }
 	}
 	
-	var distance: UInt {
-		get { return UInt(self.distanceLabel.text ?? "") ?? 0 }
-		set { self.distanceLabel.text = "\(newValue)" }
+	var distance: Meter = Meter(value: 0) {
+		didSet { self.distanceLabel.text = String(format:"%.3f km", distance.kilometer) }
 	}
 	
 	override init(frame: CGRect) {
@@ -48,6 +47,8 @@ class PNPicCellView: UICollectionViewCell {
 	}
 	
 	override func prepareForInterfaceBuilder() {
-		self.image.image = PNImages.generic_image.image(self)
+		self.imageView.image = PNImages.generic_image.image(self)
+		self.username = "Derrick123"
+		self.distance = Meter(value: 555)
 	}
 }

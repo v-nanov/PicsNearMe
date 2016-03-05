@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F3BEFC51C8A665800337F18 /* PNCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEFC41C8A665800337F18 /* PNCollectionViewController.swift */; };
+		2F3BEFC71C8A831600337F18 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEFC61C8A831600337F18 /* Meter.swift */; };
 		9729D5BF1C89F306009002E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9729D5BE1C89F306009002E6 /* AppDelegate.swift */; };
-		9729D5C11C89F306009002E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9729D5C01C89F306009002E6 /* ViewController.swift */; };
+		9729D5C11C89F306009002E6 /* PNMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9729D5C01C89F306009002E6 /* PNMapViewController.swift */; };
 		9729D5C41C89F306009002E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9729D5C21C89F306009002E6 /* Main.storyboard */; };
 		9729D5C61C89F306009002E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9729D5C51C89F306009002E6 /* Assets.xcassets */; };
 		9729D5C91C89F306009002E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9729D5C71C89F306009002E6 /* LaunchScreen.storyboard */; };
@@ -31,9 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F3BEFC41C8A665800337F18 /* PNCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNCollectionViewController.swift; sourceTree = "<group>"; };
+		2F3BEFC61C8A831600337F18 /* Meter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meter.swift; sourceTree = "<group>"; };
 		9729D5BB1C89F306009002E6 /* PicsNearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicsNearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9729D5BE1C89F306009002E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9729D5C01C89F306009002E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9729D5C01C89F306009002E6 /* PNMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNMapViewController.swift; sourceTree = "<group>"; };
 		9729D5C31C89F306009002E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9729D5C51C89F306009002E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9729D5C81C89F306009002E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,7 +49,6 @@
 		9729D5E01C89F3FC009002E6 /* PNPicCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PNPicCellView.xib; sourceTree = "<group>"; };
 		9729D5E21C8A2D58009002E6 /* PNCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNCommon.swift; sourceTree = "<group>"; };
 		9729D5E41C8A2F7F009002E6 /* PNInstagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNInstagram.swift; sourceTree = "<group>"; };
-		9729D5E61C8A2F9D009002E6 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		9729D5E81C8A306C009002E6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9729D5EA1C8A3717009002E6 /* PicsNearMe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PicsNearMe-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,13 +94,14 @@
 		9729D5BD1C89F306009002E6 /* PicsNearMe */ = {
 			isa = PBXGroup;
 			children = (
-				9729D5E71C8A2FA7009002E6 /* Configuration */,
 				9729D5BE1C89F306009002E6 /* AppDelegate.swift */,
 				9729D5E21C8A2D58009002E6 /* PNCommon.swift */,
-				9729D5C01C89F306009002E6 /* ViewController.swift */,
+				2F3BEFC61C8A831600337F18 /* Meter.swift */,
+				9729D5C01C89F306009002E6 /* PNMapViewController.swift */,
+				2F3BEFC41C8A665800337F18 /* PNCollectionViewController.swift */,
 				9729D5C21C89F306009002E6 /* Main.storyboard */,
-				9729D5DE1C89F3E0009002E6 /* PNPicCellView.swift */,
 				9729D5E41C8A2F7F009002E6 /* PNInstagram.swift */,
+				9729D5DE1C89F3E0009002E6 /* PNPicCellView.swift */,
 				9729D5E01C89F3FC009002E6 /* PNPicCellView.xib */,
 				9729D5C51C89F306009002E6 /* Assets.xcassets */,
 				9729D5C71C89F306009002E6 /* LaunchScreen.storyboard */,
@@ -114,14 +118,6 @@
 				9729D5D51C89F306009002E6 /* Info.plist */,
 			);
 			path = PicsNearMeTests;
-			sourceTree = "<group>";
-		};
-		9729D5E71C8A2FA7009002E6 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				9729D5E61C8A2F9D009002E6 /* Common.xcconfig */,
-			);
-			name = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,8 +224,10 @@
 			files = (
 				9729D5E31C8A2D58009002E6 /* PNCommon.swift in Sources */,
 				9729D5DF1C89F3E0009002E6 /* PNPicCellView.swift in Sources */,
+				2F3BEFC71C8A831600337F18 /* Meter.swift in Sources */,
+				2F3BEFC51C8A665800337F18 /* PNCollectionViewController.swift in Sources */,
 				9729D5E51C8A2F7F009002E6 /* PNInstagram.swift in Sources */,
-				9729D5C11C89F306009002E6 /* ViewController.swift in Sources */,
+				9729D5C11C89F306009002E6 /* PNMapViewController.swift in Sources */,
 				9729D5BF1C89F306009002E6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,7 +272,6 @@
 /* Begin XCBuildConfiguration section */
 		9729D5D61C89F306009002E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9729D5E61C8A2F9D009002E6 /* Common.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -320,7 +317,6 @@
 		};
 		9729D5D71C89F306009002E6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9729D5E61C8A2F9D009002E6 /* Common.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -359,7 +355,6 @@
 		};
 		9729D5D91C89F306009002E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9729D5E61C8A2F9D009002E6 /* Common.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PicsNearMe/Info.plist;
@@ -372,7 +367,6 @@
 		};
 		9729D5DA1C89F306009002E6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9729D5E61C8A2F9D009002E6 /* Common.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PicsNearMe/Info.plist;
@@ -385,7 +379,6 @@
 		};
 		9729D5DC1C89F306009002E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9729D5E61C8A2F9D009002E6 /* Common.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PicsNearMeTests/Info.plist;
@@ -398,7 +391,6 @@
 		};
 		9729D5DD1C89F306009002E6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9729D5E61C8A2F9D009002E6 /* Common.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PicsNearMeTests/Info.plist;
@@ -428,6 +420,7 @@
 				9729D5DA1C89F306009002E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9729D5DB1C89F306009002E6 /* Build configuration list for PBXNativeTarget "PicsNearMeTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +429,7 @@
 				9729D5DD1C89F306009002E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
