@@ -11,6 +11,7 @@ import UIKit
 @IBDesignable
 class PNPicCellView: UICollectionViewCell {
 	let nibName = "PNPicCellView"
+	var uuid = String()
 	@IBOutlet var imageView: UIImageView!
 	@IBOutlet var usernameLabel: UILabel!
 	@IBOutlet var distanceLabel: UILabel!
@@ -44,6 +45,13 @@ class PNPicCellView: UICollectionViewCell {
 			self.topAnchor.constraintEqualToAnchor(nib.topAnchor).active = true
 			self.bottomAnchor.constraintEqualToAnchor(nib.bottomAnchor).active = true
 		}
+	}
+	
+	func clear() {
+		uuid = ""
+		imageView.image = nil
+		username = ""
+		distance = Meter(value: 0)
 	}
 	
 	override func prepareForInterfaceBuilder() {

@@ -33,6 +33,12 @@ enum PNImages: String {
 	}
 }
 
+enum PNError: ErrorType {
+	case DownloadError
+	case DataConversionError
+	case CacheFetchError
+}
+
 func typeAsString<T>(type: T.Type) -> String {
 	return "\(type)".componentsSeparatedByString(".").last!
 }

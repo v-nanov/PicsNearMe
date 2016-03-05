@@ -41,6 +41,10 @@ struct PNInstagramPhotoModel {
 }
 
 class PNInstagramPhotoManager {
+	
+	static let sharedInstance = PNInstagramPhotoManager()
+	var downloadManager = PNDownloaderManager.sharedInstance
+	
 	var currentLocation = CLLocationCoordinate2D(latitude: 48.858844, longitude: 2.294351)
 	var radius = UInt(100)
 	
@@ -79,4 +83,40 @@ class PNInstagramPhotoManager {
 			}).resume()
 		}
 	}
+	
+}
+
+class PNDownloaderManager {
+	static let sharedInstance = PNDownloaderManager()
+	let downloaderDispatchQueue = dispatch_queue_create(typeAsString(PNDownloaderManager), DISPATCH_QUEUE_CONCURRENT)
+	private let cache = NSCache()
+	
+	func getImageFromData(data: NSData) throws -> UIImage {
+		guard let img = UIImage(data: data) else {
+			throw PNError.DataConversionError
+		}
+		return img
+	}
+	
+	func getImageFromCache(url: NSURL) throws -> UIImage {
+		guard let img = cache.objectForKey(url.absoluteString) as? UIImage else {
+			throw PNError.CacheFetchError
+		}
+		return img
+	}
+	
+	func getImageFromURL(url: NSURL) throws -> UIImage {
+		guard let data = NSData(contentsOfURL: url) else {
+			throw PNError.DownloadError
+		}
+		
+		do {
+			let img = try getImageFromData(data)
+			cache.setObject(img, forKey: url.absoluteString)
+			return img
+		} catch let e {
+			throw e
+		}
+	}
+	
 }
