@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 class PNPicCellView: UICollectionViewCell {
-	let nibName = "PNPicCellView"
+	let nibName = typeAsString(PNPicCellView)
 	var uuid = String()
 	@IBOutlet var imageView: UIImageView!
 	@IBOutlet var usernameLabel: UILabel!
@@ -36,15 +36,7 @@ class PNPicCellView: UICollectionViewCell {
 	}
 	
 	func setUp() {
-		let b = NSBundle.init(forClass: self.dynamicType)
-		if let nib = UINib(nibName: self.nibName, bundle: b).instantiateWithOwner(self, options: nil)[0] as? UIView {
-			self.addSubview(nib)
-			nib.translatesAutoresizingMaskIntoConstraints = false
-			self.leadingAnchor.constraintEqualToAnchor(nib.leadingAnchor).active = true
-			self.trailingAnchor.constraintEqualToAnchor(nib.trailingAnchor).active = true
-			self.topAnchor.constraintEqualToAnchor(nib.topAnchor).active = true
-			self.bottomAnchor.constraintEqualToAnchor(nib.bottomAnchor).active = true
-		}
+		self.addViewFromNib(self.nibName)
 	}
 	
 	func clear() {
@@ -55,7 +47,6 @@ class PNPicCellView: UICollectionViewCell {
 	}
 	
 	override func prepareForInterfaceBuilder() {
-		self.imageView.image = PNImages.generic_image.image(self)
 		self.username = "Derrick123"
 		self.distance = Meter(value: 555)
 	}

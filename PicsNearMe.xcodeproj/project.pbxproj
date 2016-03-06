@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F0E1C7C1C8BA86E004B1796 /* PNLoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E1C7B1C8BA86E004B1796 /* PNLoginScreenViewController.swift */; };
 		2F3BEFC51C8A665800337F18 /* PNCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEFC41C8A665800337F18 /* PNCollectionViewController.swift */; };
 		2F3BEFC71C8A831600337F18 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEFC61C8A831600337F18 /* Meter.swift */; };
+		2F3BEFC91C8B916A00337F18 /* PNMapSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEFC81C8B916A00337F18 /* PNMapSliderView.swift */; };
+		2F3BEFCB1C8B951C00337F18 /* PNMapSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F3BEFCA1C8B951C00337F18 /* PNMapSliderView.xib */; };
 		9729D5BF1C89F306009002E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9729D5BE1C89F306009002E6 /* AppDelegate.swift */; };
 		9729D5C11C89F306009002E6 /* PNMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9729D5C01C89F306009002E6 /* PNMapViewController.swift */; };
 		9729D5C41C89F306009002E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9729D5C21C89F306009002E6 /* Main.storyboard */; };
@@ -33,8 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F0E1C7B1C8BA86E004B1796 /* PNLoginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNLoginScreenViewController.swift; sourceTree = "<group>"; };
 		2F3BEFC41C8A665800337F18 /* PNCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNCollectionViewController.swift; sourceTree = "<group>"; };
 		2F3BEFC61C8A831600337F18 /* Meter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meter.swift; sourceTree = "<group>"; };
+		2F3BEFC81C8B916A00337F18 /* PNMapSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNMapSliderView.swift; sourceTree = "<group>"; };
+		2F3BEFCA1C8B951C00337F18 /* PNMapSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PNMapSliderView.xib; sourceTree = "<group>"; };
 		9729D5BB1C89F306009002E6 /* PicsNearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicsNearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9729D5BE1C89F306009002E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9729D5C01C89F306009002E6 /* PNMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNMapViewController.swift; sourceTree = "<group>"; };
@@ -96,11 +102,14 @@
 			children = (
 				9729D5BE1C89F306009002E6 /* AppDelegate.swift */,
 				9729D5E21C8A2D58009002E6 /* PNCommon.swift */,
+				2F0E1C7B1C8BA86E004B1796 /* PNLoginScreenViewController.swift */,
 				2F3BEFC61C8A831600337F18 /* Meter.swift */,
 				9729D5C01C89F306009002E6 /* PNMapViewController.swift */,
 				2F3BEFC41C8A665800337F18 /* PNCollectionViewController.swift */,
 				9729D5C21C89F306009002E6 /* Main.storyboard */,
 				9729D5E41C8A2F7F009002E6 /* PNInstagram.swift */,
+				2F3BEFC81C8B916A00337F18 /* PNMapSliderView.swift */,
+				2F3BEFCA1C8B951C00337F18 /* PNMapSliderView.xib */,
 				9729D5DE1C89F3E0009002E6 /* PNPicCellView.swift */,
 				9729D5E01C89F3FC009002E6 /* PNPicCellView.xib */,
 				9729D5C51C89F306009002E6 /* Assets.xcassets */,
@@ -202,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9729D5C91C89F306009002E6 /* LaunchScreen.storyboard in Resources */,
+				2F3BEFCB1C8B951C00337F18 /* PNMapSliderView.xib in Resources */,
 				9729D5C61C89F306009002E6 /* Assets.xcassets in Resources */,
 				9729D5C41C89F306009002E6 /* Main.storyboard in Resources */,
 				9729D5E11C89F3FC009002E6 /* PNPicCellView.xib in Resources */,
@@ -224,6 +234,8 @@
 			files = (
 				9729D5E31C8A2D58009002E6 /* PNCommon.swift in Sources */,
 				9729D5DF1C89F3E0009002E6 /* PNPicCellView.swift in Sources */,
+				2F0E1C7C1C8BA86E004B1796 /* PNLoginScreenViewController.swift in Sources */,
+				2F3BEFC91C8B916A00337F18 /* PNMapSliderView.swift in Sources */,
 				2F3BEFC71C8A831600337F18 /* Meter.swift in Sources */,
 				2F3BEFC51C8A665800337F18 /* PNCollectionViewController.swift in Sources */,
 				9729D5E51C8A2F7F009002E6 /* PNInstagram.swift in Sources */,

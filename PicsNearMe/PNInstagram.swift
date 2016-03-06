@@ -40,23 +40,33 @@ struct PNInstagramPhotoModel {
 	}
 }
 
+class PNInstagramSessionManager {
+	static let sharedInstance = PNInstagramSessionManager()
+	var sessionID: String = ""
+	func logout() {
+		let session = NSURLSession.sharedSession().dataTaskWithRequest(NSURLRequest(URL: NSURL(string: PNInstagramConstants.LOGOUT.rawValue)!)) { _,_,_ in
+		}
+		session.resume()
+	}
+}
+
 class PNInstagramPhotoManager {
 	
 	static let sharedInstance = PNInstagramPhotoManager()
 	var downloadManager = PNDownloaderManager.sharedInstance
 	
 	var currentLocation = CLLocationCoordinate2D(latitude: 48.858844, longitude: 2.294351)
-	var radius = UInt(100)
+	var radius = UInt(1000)
 	
 	var recentPhotos = [PNInstagramPhotoModel]()
 	
 	func getPhotosInArea(completion: (photos: [PNInstagramPhotoModel]) -> ()) {
-		let str = PNInstagramURL.BASE_URL.rawValue +
-			PNInstagramURL.QUERY_TYPE.rawValue +
+		let str = PNInstagramConstants.BASE_URL.rawValue +
+			PNInstagramConstants.QUERY_TYPE.rawValue +
 			"?distance=\(radius)" +
 			"&lat=\(currentLocation.latitude)" +
 			"&lng=\(currentLocation.longitude)" +
-		"&access_token=\(PNInstagramURL.ACCESS_TOKEN.rawValue)"
+		"&access_token=\(ACCESS_TOKEN)"
 		
 		let _completion = { (photoObjs: [PNInstagramPhotoModel]) -> () in
 			dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -68,9 +78,9 @@ class PNInstagramPhotoManager {
 				guard err == nil,
 					let data = d,
 					let json = (try? NSJSONSerialization.JSONObjectWithData(data, options: [])) as? [String:AnyObject],
-				let photoObjs = json["data"] as? [[String:AnyObject]]
+					let photoObjs = json["data"] as? [[String:AnyObject]]
 					else {
-						completion(photos: [])
+						_completion([])
 						return
 				}
 				self.recentPhotos = photoObjs.map(PNInstagramPhotoModel.init).sort({ (left, right) -> Bool in

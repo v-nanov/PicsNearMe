@@ -14,11 +14,21 @@ struct InstagramDistance {
 	static let min = Meter(value: 5)
 }
 
-enum PNInstagramURL: String {
+var ACCESS_TOKEN: String {
+	return PNInstagramSessionManager.sharedInstance.sessionID
+}
+
+enum PNInstagramConstants: String {
+	case LOGOUT = "https://instagram.com/accounts/logout/"
 	case BASE_URL = "https://api.instagram.com/"
 	case QUERY_TYPE = "v1/media/search"
-	case ACCESS_TOKEN = "510573486.ab7d4b6.d8b155be5d1a47c78f72616b4d942e8d"
+	case CLIENT_ID = "1677ed07ddd54db0a70f14f9b1435579"
+	case REDIRECT_URI = "http://instagram.pixelunion.net"
+	case AUTH_URL = "https://instagram.com/oauth/authorize/" 
+	case API_URL = "https://api.instagram.com/v1/users/"
+	case TimeOut = "30"
 }
+//https://instagram.com/oauth/authorize/?client_id=1677ed07ddd54db0a70f14f9b1435579&redirect_uri=http://instagram.pixelunion.net&response_type=token
 
 enum PNImages: String {
 	case generic_image
@@ -27,10 +37,6 @@ enum PNImages: String {
 		return UIImage(named: self.rawValue) ?? UIImage()
 	}
 	
-	func image(sender: AnyObject) -> UIImage {
-		let b = NSBundle(forClass: sender.dynamicType)
-		return UIImage(named: self.rawValue, inBundle: b, compatibleWithTraitCollection: nil) ?? UIImage()
-	}
 }
 
 enum PNError: ErrorType {
@@ -48,5 +54,18 @@ extension CLLocationCoordinate2D {
 		let x0 = CLLocation(latitude: self.latitude, longitude: self.longitude)
 		let x1 = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
 		return Meter(value: x0.distanceFromLocation(x1))
+	}
+}
+
+extension UIView {
+	func addViewFromNib(nibName: String) {
+		let b = NSBundle.init(forClass: self.dynamicType)
+		let nib = UINib(nibName: nibName, bundle: b).instantiateWithOwner(self, options: nil)[0] as! UIView
+		self.addSubview(nib)
+		nib.translatesAutoresizingMaskIntoConstraints = false
+		self.leadingAnchor.constraintEqualToAnchor(nib.leadingAnchor).active = true
+		self.trailingAnchor.constraintEqualToAnchor(nib.trailingAnchor).active = true
+		self.topAnchor.constraintEqualToAnchor(nib.topAnchor).active = true
+		self.bottomAnchor.constraintEqualToAnchor(nib.bottomAnchor).active = true
 	}
 }

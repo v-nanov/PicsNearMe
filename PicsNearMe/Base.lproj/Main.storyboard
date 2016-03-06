@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wzv-za-AKi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="m7j-ta-vE7">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -10,6 +11,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wzv-za-AKi" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="f1t-ew-fYx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gt0-nA-PCQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -26,24 +28,129 @@
         <!--Map View Controller-->
         <scene sceneID="0s9-K5-JW2">
             <objects>
-                <viewController id="sPZ-jC-EWq" customClass="PNMapViewController" customModule="PicsNearMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PNMapViewController" id="sPZ-jC-EWq" customClass="PNMapViewController" customModule="PicsNearMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P1l-IY-r2G"/>
                         <viewControllerLayoutGuide type="bottom" id="Rpk-4A-ivQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XSs-cm-EUy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-di-GZv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0Q-12-iFu" customClass="PNMapSliderView" customModule="PicsNearMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="429" width="320" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wG3-di-GZv" firstAttribute="leading" secondItem="XSs-cm-EUy" secondAttribute="leading" id="1nZ-Pb-rWZ"/>
+                            <constraint firstAttribute="trailing" secondItem="wG3-di-GZv" secondAttribute="trailing" id="84v-wh-8Zq"/>
+                            <constraint firstAttribute="trailing" secondItem="n0Q-12-iFu" secondAttribute="trailing" id="ANG-Kx-1OJ"/>
+                            <constraint firstItem="Rpk-4A-ivQ" firstAttribute="top" secondItem="n0Q-12-iFu" secondAttribute="bottom" id="V6X-cb-L3H"/>
+                            <constraint firstItem="n0Q-12-iFu" firstAttribute="leading" secondItem="XSs-cm-EUy" secondAttribute="leading" id="aT2-kR-Lg4"/>
+                            <constraint firstItem="n0Q-12-iFu" firstAttribute="top" secondItem="wG3-di-GZv" secondAttribute="bottom" id="dgB-uT-juj"/>
+                            <constraint firstItem="wG3-di-GZv" firstAttribute="top" secondItem="P1l-IY-r2G" secondAttribute="bottom" id="w0s-ge-JbS"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="Rv4-mz-P4U"/>
                     <connections>
+                        <outlet property="mapView" destination="wG3-di-GZv" id="tRZ-Aa-dWj"/>
+                        <outlet property="sliderView" destination="n0Q-12-iFu" id="hW1-oM-bIC"/>
+                        <outlet property="view" destination="wG3-di-GZv" id="ABR-cm-7Ui"/>
                         <segue destination="vMZ-dd-rnu" kind="push" identifier="PNCollectionViewController" id="Qdb-OH-tal"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRc-gY-fVO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="425" y="401"/>
+        </scene>
+        <!--Login Screen View Controller-->
+        <scene sceneID="1Un-fB-wmi">
+            <objects>
+                <viewController id="m7j-ta-vE7" customClass="PNLoginScreenViewController" customModule="PicsNearMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DLR-6b-m8g"/>
+                        <viewControllerLayoutGuide type="bottom" id="kMM-1w-D9h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wwV-C5-asO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ROm-NN-rRP">
+                                <rect key="frame" x="16" y="70" width="288" height="99"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Instagram Login">
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="30" name="MarkerFelt-Wide"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+
+This app requires Instagram.  Please sign in by clicking the link below</string>
+                                        <attributes>
+                                            <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iio-5Y-Hl9">
+                                <rect key="frame" x="16" y="185" width="288" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="MmS-BK-Kdi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="23"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tappedLoginButton:" destination="m7j-ta-vE7" eventType="touchUpInside" id="CXY-kj-vqa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ROm-NN-rRP" secondAttribute="trailing" id="83Y-hr-SHV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iio-5Y-Hl9" secondAttribute="trailing" id="aY3-zG-iGh"/>
+                            <constraint firstItem="iio-5Y-Hl9" firstAttribute="top" secondItem="ROm-NN-rRP" secondAttribute="bottom" constant="16" id="iHj-G9-zCM"/>
+                            <constraint firstItem="iio-5Y-Hl9" firstAttribute="leading" secondItem="wwV-C5-asO" secondAttribute="leadingMargin" id="khT-Ji-brG"/>
+                            <constraint firstItem="ROm-NN-rRP" firstAttribute="top" secondItem="DLR-6b-m8g" secondAttribute="bottom" constant="50" id="ln6-ag-Il3"/>
+                            <constraint firstItem="ROm-NN-rRP" firstAttribute="leading" secondItem="wwV-C5-asO" secondAttribute="leadingMargin" id="sjr-km-fnE"/>
+                            <constraint firstItem="kMM-1w-D9h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iio-5Y-Hl9" secondAttribute="bottom" constant="8" id="zj8-iv-gZc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="RdZ-dv-wOP" id="8KK-h0-bZY"/>
+                        <segue destination="wzv-za-AKi" kind="replace" identifier="PNMapViewController" splitViewControllerTargetIndex="1" id="Iqg-yQ-GRS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dqc-aU-3to" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <webView contentMode="scaleToFill" id="RdZ-dv-wOP">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="m7j-ta-vE7" id="Gqb-gT-ol4"/>
+                    </connections>
+                </webView>
+            </objects>
+            <point key="canvasLocation" x="-424" y="390"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="qLZ-by-Gen">
