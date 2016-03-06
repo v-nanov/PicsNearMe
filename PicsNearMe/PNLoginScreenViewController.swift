@@ -8,68 +8,49 @@
 
 import UIKit
 
-class PNLoginScreenViewController: UIViewController, UIWebViewDelegate {
+class PNLoginScreenViewController: UIViewController {
 	
-	@IBOutlet var webView: UIWebView!
+	@IBOutlet weak var webView: UIWebView!
+	@IBOutlet weak var webViewHeightConstraint: NSLayoutConstraint!
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	
-	var loginComponent = NSURLComponents(string: PNInstagramConstants.AUTH_URL.rawValue)!
+	var instagramSessionManager = PNInstagramSessionManager.sharedInstance
 	
-	@IBAction func tappedLoginButton(sender: AnyObject) {
-		// perform oauth with instagram
-		
-		loginComponent.queryItems = [
-			NSURLQueryItem(name: "client_id", value: PNInstagramConstants.CLIENT_ID.rawValue),
-			NSURLQueryItem(name: "redirect_uri", value: PNInstagramConstants.REDIRECT_URI.rawValue),
-			NSURLQueryItem(name: "response_type", value: "token")
-		]
-		
-		let request = NSMutableURLRequest(URL: loginComponent.URL!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: NSTimeInterval(PNInstagramConstants.TimeOut.rawValue)!)
-		
-		request.HTTPMethod = "POST"
-		
-		webView.loadRequest(request)
-		presentWebView()
-		
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		self.view.backgroundColor = UIColor(patternImage: PNImages.LoginBackgroundPattern.image)
 	}
 	
-	func presentWebView() {
-		self.view.addSubview(webView)
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		instagramSessionManager.logout()
+
+		self.activityIndicator.startAnimating()
+		self.webView.hidden = true
 		
-		webView.frame = self.view.frame
-		
-	}
-	
-	func dismissWebView() {
-		webView.removeFromSuperview()
-	}
-	
-	// MARK: - webview delegate
-	
-	func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-		let components = NSURLComponents(URL: request.URL!, resolvingAgainstBaseURL: false)!
-		if let accessFragment: NSString = components.fragment {
-			let m = accessFragment.rangeOfString("access_token=")
-			if m.location != NSNotFound {
-				PNInstagramSessionManager.sharedInstance.sessionID = accessFragment.substringFromIndex(m.location + m.length)
-				//dismissWebView()
+		instagramSessionManager.loadLogin(webView,
+			pageFinishedLoading: { [unowned self] () -> () in
+				var currentWVSize = self.webView.frame.size
+				currentWVSize.height = 0
 				
-				let destinationVC = storyboard!.instantiateViewControllerWithIdentifier(typeAsString(PNMapViewController))
-					showViewController(UINavigationController(rootViewController: destinationVC), sender: self)
-//				performSegueWithIdentifier(typeAsString(PNMapViewController), sender: self)
-			}
-		}
-		return true
-	}
-	
-	func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
-		// TODO: Error Msg
-	}
-	
-	func webViewDidStartLoad(webView: UIWebView) {
+				self.formatWebView(currentWVSize)
+				self.webView.hidden = false
+				self.activityIndicator.stopAnimating()
+			}, completion: { (success) -> () in
+				let destinationVC = self.storyboard!.instantiateViewControllerWithIdentifier(typeAsString(PNMapViewController))
+				self.showViewController(UINavigationController(rootViewController: destinationVC), sender: self)
+		})
 		
 	}
 	
-	func webViewDidFinishLoad(webView: UIWebView) {
+	func formatWebView(size: CGSize) {
+		let sizeBasedContent = self.webView.sizeThatFits(size)
+		self.webViewHeightConstraint.constant = sizeBasedContent.height
 		
+		webView.layer.shadowColor = UIColor.blackColor().CGColor
+		webView.layer.shadowOffset = CGSize(width: 0, height: 5)
+		webView.layer.masksToBounds = false
+		webView.layer.shadowRadius = 5
+		webView.layer.shadowOpacity = 0.5
 	}
 }
