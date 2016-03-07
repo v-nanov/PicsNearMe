@@ -12,6 +12,7 @@
 		2F3BEFC71C8A831600337F18 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEFC61C8A831600337F18 /* Meter.swift */; };
 		2F3BEFC91C8B916A00337F18 /* PNMapSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEFC81C8B916A00337F18 /* PNMapSliderView.swift */; };
 		2F3BEFCB1C8B951C00337F18 /* PNMapSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F3BEFCA1C8B951C00337F18 /* PNMapSliderView.xib */; };
+		2FCA4AE31C8DEEEB0032FBD1 /* PNCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA4AE21C8DEEEB0032FBD1 /* PNCollectionViewHeader.swift */; };
 		2FFAD4DD1C8D553700894949 /* PNInstagramPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAD4DC1C8D553700894949 /* PNInstagramPhotoModel.swift */; };
 		2FFAD4DF1C8D564100894949 /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAD4DE1C8D564100894949 /* CLLocationCoordinate2D+Extension.swift */; };
 		2FFAD4E11C8D56BF00894949 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAD4E01C8D56BF00894949 /* UIView+Extension.swift */; };
@@ -62,6 +63,7 @@
 		2F3BEFC61C8A831600337F18 /* Meter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meter.swift; sourceTree = "<group>"; };
 		2F3BEFC81C8B916A00337F18 /* PNMapSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNMapSliderView.swift; sourceTree = "<group>"; };
 		2F3BEFCA1C8B951C00337F18 /* PNMapSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PNMapSliderView.xib; sourceTree = "<group>"; };
+		2FCA4AE21C8DEEEB0032FBD1 /* PNCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNCollectionViewHeader.swift; sourceTree = "<group>"; };
 		2FFAD4DC1C8D553700894949 /* PNInstagramPhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNInstagramPhotoModel.swift; sourceTree = "<group>"; };
 		2FFAD4DE1C8D564100894949 /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
 		2FFAD4E01C8D56BF00894949 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				2F3BEFC81C8B916A00337F18 /* PNMapSliderView.swift */,
 				9729D5DE1C89F3E0009002E6 /* PNPicCellView.swift */,
 				2FFAD4E01C8D56BF00894949 /* UIView+Extension.swift */,
+				2FCA4AE21C8DEEEB0032FBD1 /* PNCollectionViewHeader.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				2FFAD4DF1C8D564100894949 /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				2FFAD4DD1C8D553700894949 /* PNInstagramPhotoModel.swift in Sources */,
 				2F3BEFC91C8B916A00337F18 /* PNMapSliderView.swift in Sources */,
+				2FCA4AE31C8DEEEB0032FBD1 /* PNCollectionViewHeader.swift in Sources */,
 				2FFAD4E31C8D571500894949 /* PNInstagramSessionManager.swift in Sources */,
 				2FFAD4E11C8D56BF00894949 /* UIView+Extension.swift in Sources */,
 				2F3BEFC71C8A831600337F18 /* Meter.swift in Sources */,

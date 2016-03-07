@@ -163,28 +163,50 @@ This app requires Instagram.  Please sign in!</string>
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tWw-qL-q8C">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ahy-PS-PVt">
-                            <size key="itemSize" width="134" height="133"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="itemSize" width="150" height="180"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="LE2-cx-PMb">
                             <rect key="frame" x="0.0" y="-64" width="320" height="568"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PNPicCellView" id="XmK-A0-hLQ" customClass="PNPicCellView" customModule="PicsNearMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="134" height="133"/>
+                                <rect key="frame" x="0.0" y="114" width="150" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="134" height="133"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PNCollectionViewHeader" id="gRw-DS-Xbi" customClass="PNCollectionViewHeader" customModule="PicsNearMe" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="64" width="320" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6bT-Xg-RUj">
+                                    <rect key="frame" x="8" y="8" width="304" height="34"/>
+                                    <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="24"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="6bT-Xg-RUj" firstAttribute="top" secondItem="gRw-DS-Xbi" secondAttribute="topMargin" id="Sdo-hc-4gj"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="6bT-Xg-RUj" secondAttribute="bottom" id="T56-hJ-uE8"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="6bT-Xg-RUj" secondAttribute="trailing" id="ZZZ-as-EZY"/>
+                                <constraint firstItem="6bT-Xg-RUj" firstAttribute="leading" secondItem="gRw-DS-Xbi" secondAttribute="leadingMargin" id="gYb-Mj-Q4s"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="sectionTitle" destination="6bT-Xg-RUj" id="6o6-kd-NBX"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="vMZ-dd-rnu" id="YKL-R5-YGN"/>
                             <outlet property="delegate" destination="vMZ-dd-rnu" id="syz-w2-ZpF"/>

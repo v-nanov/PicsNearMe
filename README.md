@@ -20,6 +20,8 @@ More information about acquiring an access token can be found here:  https://www
 
 The steps they provide are high level and I found success in gaining the access token by using a proxy: http://instagram.pixelunion.net
 
+The PNInstagramPhotoManager class caches the photos of the downloaded images in order to prevent redundant downloads.
+
 [Troubleshooting]
 If you are using a simulator, your login might be blocked.  This is because by default the simulator desables http requests.  To fix this, turn it on in iOS Settings> Developer> Allow HTTP services
 Then terminate the app and relaunch it.

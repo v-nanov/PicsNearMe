@@ -24,7 +24,10 @@ class PNLoginScreenViewController: UIViewController {
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
 		instagramSessionManager.logout()
+	}
 
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
 		self.activityIndicator.startAnimating()
 		self.webView.hidden = true
 		instagramSessionManager.loadLogin(webView,

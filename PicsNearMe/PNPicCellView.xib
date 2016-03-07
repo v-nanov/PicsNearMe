@@ -19,36 +19,47 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4XM-xZ-wg4">
-                    <rect key="frame" x="282" y="281" width="37" height="37"/>
+                    <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
                     <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </activityIndicatorView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lvN-rb-waq">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lvN-rb-waq">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="535"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5M-vP-EDH">
-                    <rect key="frame" x="0.0" y="543" width="600" height="28"/>
-                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="d6V-5R-HAL">
-                    <rect key="frame" x="0.0" y="579" width="600" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWl-ZW-hOY">
+                    <rect key="frame" x="0.0" y="535" width="600" height="65"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5M-vP-EDH">
+                            <rect key="frame" x="0.0" y="8" width="600" height="28"/>
+                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="d6V-5R-HAL">
+                            <rect key="frame" x="0.0" y="44" width="600" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="d6V-5R-HAL" secondAttribute="bottom" id="49o-wa-N5z"/>
+                        <constraint firstItem="v5M-vP-EDH" firstAttribute="top" secondItem="YWl-ZW-hOY" secondAttribute="top" constant="8" id="E4Z-4y-fZw"/>
+                        <constraint firstItem="d6V-5R-HAL" firstAttribute="leading" secondItem="YWl-ZW-hOY" secondAttribute="leading" id="FlI-ZR-FKM"/>
+                        <constraint firstItem="d6V-5R-HAL" firstAttribute="top" secondItem="v5M-vP-EDH" secondAttribute="bottom" constant="8" id="PM1-AI-Tm4"/>
+                        <constraint firstAttribute="trailing" secondItem="v5M-vP-EDH" secondAttribute="trailing" id="ZvF-fh-0cC"/>
+                        <constraint firstAttribute="trailing" secondItem="d6V-5R-HAL" secondAttribute="trailing" id="Zz0-RC-p47"/>
+                        <constraint firstItem="v5M-vP-EDH" firstAttribute="leading" secondItem="YWl-ZW-hOY" secondAttribute="leading" id="wiU-BU-GMi"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="YWl-ZW-hOY" secondAttribute="bottom" id="50u-8U-k1l"/>
+                <constraint firstItem="YWl-ZW-hOY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Fdv-zi-bzI"/>
+                <constraint firstItem="YWl-ZW-hOY" firstAttribute="top" secondItem="lvN-rb-waq" secondAttribute="bottom" id="MC2-LW-AGK"/>
                 <constraint firstItem="lvN-rb-waq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MCc-dB-OwZ"/>
-                <constraint firstAttribute="bottom" secondItem="d6V-5R-HAL" secondAttribute="bottom" id="RQG-4Y-bTb"/>
-                <constraint firstItem="v5M-vP-EDH" firstAttribute="top" secondItem="lvN-rb-waq" secondAttribute="bottom" constant="8" id="XLa-lP-gga"/>
-                <constraint firstItem="d6V-5R-HAL" firstAttribute="top" secondItem="v5M-vP-EDH" secondAttribute="bottom" constant="8" id="cbk-g3-GAw"/>
-                <constraint firstItem="v5M-vP-EDH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iCC-St-gWi"/>
-                <constraint firstAttribute="trailing" secondItem="v5M-vP-EDH" secondAttribute="trailing" id="mqe-w7-LJQ"/>
-                <constraint firstAttribute="trailing" secondItem="d6V-5R-HAL" secondAttribute="trailing" id="nEM-Dn-jxw"/>
+                <constraint firstAttribute="trailing" secondItem="YWl-ZW-hOY" secondAttribute="trailing" id="iZW-u4-rDD"/>
                 <constraint firstItem="lvN-rb-waq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nfa-jB-f3t"/>
-                <constraint firstItem="d6V-5R-HAL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="v3x-Jo-keX"/>
                 <constraint firstAttribute="trailing" secondItem="lvN-rb-waq" secondAttribute="trailing" id="xQ1-NF-yR2"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

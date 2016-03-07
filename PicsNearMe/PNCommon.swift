@@ -25,6 +25,7 @@ enum PNInstagramConstants: String {
 enum PNImages: String {
 	case generic_image
 	case LoginBackgroundPattern
+	case travel
 	
 	var image: UIImage {
 		return UIImage(named: self.rawValue) ?? UIImage()
