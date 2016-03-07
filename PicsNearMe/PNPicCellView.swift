@@ -15,6 +15,7 @@ class PNPicCellView: UICollectionViewCell {
 	@IBOutlet var imageView: UIImageView!
 	@IBOutlet var usernameLabel: UILabel!
 	@IBOutlet var distanceLabel: UILabel!
+	@IBOutlet var activityIndicator: UIActivityIndicatorView!
 	
 	var username: String {
 		get { return self.usernameLabel.text ?? "" }

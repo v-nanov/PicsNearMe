@@ -136,7 +136,6 @@ class PNInstagramPhotoManager {
 					return a(self.currentLocation).value < b(self.currentLocation).value
 				})
 				_completion(self.recentPhotos)
-				print("done")
 			}).resume()
 		}
 	}

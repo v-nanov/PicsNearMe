@@ -7,16 +7,36 @@
 //
 
 import UIKit
+import MapKit
 
 class PNCollectionViewController: UICollectionViewController {
 	
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+	@IBOutlet weak var barButton: UIBarButtonItem!
 	let instagramManager = PNInstagramPhotoManager.sharedInstance
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		activityIndicator.startAnimating()
 		instagramManager.getPhotosInArea({ photoObjs in
+			self.activityIndicator.stopAnimating()
 			self.collectionView!.reloadData()
+			self.barButton.title = "\(photoObjs.count)"
 		})
+		
+		let geo = CLGeocoder()
+		let latlong = instagramManager.currentLocation
+		let loc = CLLocation(latitude: latlong.latitude, longitude: latlong.longitude)
+		geo.reverseGeocodeLocation(loc) { (pms: [CLPlacemark]?, e: NSError?) -> Void in
+			if let pm = pms?.first,
+			city = pm.locality,
+			country = pm.country
+			{
+				self.title = "\(city),\(country)"
+			} else {
+				self.title = "unknown location"
+			}
+		}
 	}
 	
 	override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -27,6 +47,7 @@ class PNCollectionViewController: UICollectionViewController {
 		cell.uuid = NSUUID().UUIDString
 		
 		let imageSetBlock = { (url: NSURL, uuid: String) in
+			cell.activityIndicator.startAnimating()
 			dispatch_async(self.instagramManager.downloadManager.downloaderDispatchQueue, { () -> Void in
 				do {
 					let img = try self.instagramManager.downloadManager.getImageFromURL(url)
@@ -38,6 +59,7 @@ class PNCollectionViewController: UICollectionViewController {
 					if let cell = visibleCells.first as? PNPicCellView {
 						dispatch_async(dispatch_get_main_queue(), { () -> Void in
 							cell.imageView.image = img
+							cell.activityIndicator.stopAnimating()
 							cell.setNeedsLayout()
 						})
 					}
