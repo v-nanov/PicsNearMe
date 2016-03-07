@@ -9,5 +9,6 @@
 #ifndef PicsNearMe_Bridging_Header_h
 #define PicsNearMe_Bridging_Header_h
 
+@import MapKit;
 
 #endif /* PicsNearMe_Bridging_Header_h */

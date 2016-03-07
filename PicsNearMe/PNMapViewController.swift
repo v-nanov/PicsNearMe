@@ -6,9 +6,6 @@
 //  Copyright © 2016 dnthome. All rights reserved.
 //
 
-import UIKit
-import MapKit
-
 class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewProtocol, UIAlertViewDelegate {
 
 	@IBOutlet var mapView: MKMapView!

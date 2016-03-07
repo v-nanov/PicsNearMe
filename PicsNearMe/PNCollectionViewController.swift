@@ -6,9 +6,6 @@
 //  Copyright © 2016 dnthome. All rights reserved.
 //
 
-import UIKit
-import MapKit
-
 class PNCollectionViewController: UICollectionViewController {
 	
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -29,12 +26,11 @@ class PNCollectionViewController: UICollectionViewController {
 		let loc = CLLocation(latitude: latlong.latitude, longitude: latlong.longitude)
 		geo.reverseGeocodeLocation(loc) { (pms: [CLPlacemark]?, e: NSError?) -> Void in
 			if let pm = pms?.first,
-			city = pm.locality,
-			country = pm.country
+				city = pm.locality
 			{
-				self.title = "\(city),\(country)"
+				self.title = "\(city)"
 			} else {
-				self.title = "unknown location"
+				self.title = "Unknown Area"
 			}
 		}
 	}

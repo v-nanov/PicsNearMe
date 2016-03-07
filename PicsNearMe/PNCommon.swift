@@ -6,14 +6,6 @@
 //  Copyright © 2016 dnthome. All rights reserved.
 //
 
-import UIKit
-import MapKit
-
-struct InstagramDistance {
-	static let max = Meter(value: 5_000)
-	static let min = Meter(value: 5)
-}
-
 var ACCESS_TOKEN: String {
 	return PNInstagramSessionManager.sharedInstance.sessionID
 }
@@ -37,7 +29,6 @@ enum PNImages: String {
 	var image: UIImage {
 		return UIImage(named: self.rawValue) ?? UIImage()
 	}
-	
 }
 
 enum PNError: ErrorType {
@@ -48,25 +39,4 @@ enum PNError: ErrorType {
 
 func typeAsString<T>(type: T.Type) -> String {
 	return "\(type)".componentsSeparatedByString(".").last!
-}
-
-extension CLLocationCoordinate2D {
-	func distanceTo(coord: CLLocationCoordinate2D) -> Meter {
-		let x0 = CLLocation(latitude: self.latitude, longitude: self.longitude)
-		let x1 = CLLocation(latitude: coord.latitude, longitude: coord.longitude)
-		return Meter(value: x0.distanceFromLocation(x1))
-	}
-}
-
-extension UIView {
-	func addViewFromNib(nibName: String) {
-		let b = NSBundle.init(forClass: self.dynamicType)
-		let nib = UINib(nibName: nibName, bundle: b).instantiateWithOwner(self, options: nil)[0] as! UIView
-		self.addSubview(nib)
-		nib.translatesAutoresizingMaskIntoConstraints = false
-		self.leadingAnchor.constraintEqualToAnchor(nib.leadingAnchor).active = true
-		self.trailingAnchor.constraintEqualToAnchor(nib.trailingAnchor).active = true
-		self.topAnchor.constraintEqualToAnchor(nib.topAnchor).active = true
-		self.bottomAnchor.constraintEqualToAnchor(nib.bottomAnchor).active = true
-	}
 }
