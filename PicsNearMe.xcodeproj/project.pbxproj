@@ -78,6 +78,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FFAD4D61C8D543400894949 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				9729D5E21C8A2D58009002E6 /* PNCommon.swift */,
+				2F3BEFC61C8A831600337F18 /* Meter.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		2FFAD4D71C8D544800894949 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2F0E1C7B1C8BA86E004B1796 /* PNLoginScreenViewController.swift */,
+				9729D5C01C89F306009002E6 /* PNMapViewController.swift */,
+				2F3BEFC41C8A665800337F18 /* PNCollectionViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2FFAD4D81C8D545A00894949 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F3BEFC81C8B916A00337F18 /* PNMapSliderView.swift */,
+				9729D5DE1C89F3E0009002E6 /* PNPicCellView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2FFAD4D91C8D547B00894949 /* InterfaceBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				2F3BEFCA1C8B951C00337F18 /* PNMapSliderView.xib */,
+				9729D5C21C89F306009002E6 /* Main.storyboard */,
+				9729D5E01C89F3FC009002E6 /* PNPicCellView.xib */,
+				9729D5C71C89F306009002E6 /* LaunchScreen.storyboard */,
+			);
+			name = InterfaceBuilder;
+			sourceTree = "<group>";
+		};
+		2FFAD4DA1C8D54B100894949 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9729D5E41C8A2F7F009002E6 /* PNInstagram.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
 		9729D5B21C89F306009002E6 = {
 			isa = PBXGroup;
 			children = (
@@ -100,20 +147,13 @@
 		9729D5BD1C89F306009002E6 /* PicsNearMe */ = {
 			isa = PBXGroup;
 			children = (
-				9729D5BE1C89F306009002E6 /* AppDelegate.swift */,
-				9729D5E21C8A2D58009002E6 /* PNCommon.swift */,
-				2F0E1C7B1C8BA86E004B1796 /* PNLoginScreenViewController.swift */,
-				2F3BEFC61C8A831600337F18 /* Meter.swift */,
-				9729D5C01C89F306009002E6 /* PNMapViewController.swift */,
-				2F3BEFC41C8A665800337F18 /* PNCollectionViewController.swift */,
-				9729D5C21C89F306009002E6 /* Main.storyboard */,
-				9729D5E41C8A2F7F009002E6 /* PNInstagram.swift */,
-				2F3BEFC81C8B916A00337F18 /* PNMapSliderView.swift */,
-				2F3BEFCA1C8B951C00337F18 /* PNMapSliderView.xib */,
-				9729D5DE1C89F3E0009002E6 /* PNPicCellView.swift */,
-				9729D5E01C89F3FC009002E6 /* PNPicCellView.xib */,
+				2FFAD4D61C8D543400894949 /* Utility */,
+				2FFAD4D71C8D544800894949 /* Controllers */,
+				2FFAD4DA1C8D54B100894949 /* Networking */,
+				2FFAD4D81C8D545A00894949 /* View */,
+				2FFAD4D91C8D547B00894949 /* InterfaceBuilder */,
 				9729D5C51C89F306009002E6 /* Assets.xcassets */,
-				9729D5C71C89F306009002E6 /* LaunchScreen.storyboard */,
+				9729D5BE1C89F306009002E6 /* AppDelegate.swift */,
 				9729D5CA1C89F306009002E6 /* Info.plist */,
 				9729D5EA1C8A3717009002E6 /* PicsNearMe-Bridging-Header.h */,
 			);
