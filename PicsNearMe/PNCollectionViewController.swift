@@ -118,7 +118,10 @@ class PNCollectionViewController: UICollectionViewController {
 	
 	func collectionView( collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout,  sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
 	{
-		if (indexPath.row % 3) == 0 { return CGSizeMake(collectionView.bounds.size.width, collectionView.bounds.size.width) }
-		else { return CGSizeMake( (collectionView.bounds.size.width/2) - 5, (collectionView.bounds.size.width/2) - 5) }
+		if (indexPath.row % 3) == 0 {
+			return CGSizeMake(collectionView.bounds.size.width, collectionView.bounds.size.width)
+		} else {
+			return CGSizeMake( (collectionView.bounds.size.width/2) - 5, (collectionView.bounds.size.width/2) - 5)
+		}
 	}
 }
