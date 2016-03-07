@@ -21,7 +21,7 @@ struct PNInstagramPhotoModel {
 					location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
 				}
 			case "images":
-				if let thumbnail = value["thumbnail"] as? [String:AnyObject],
+				if let thumbnail = value["standard_resolution"] as? [String:AnyObject],
 					let thumbnailurl = thumbnail["url"] as? String,
 					let url = NSURL(string: thumbnailurl)
 				{

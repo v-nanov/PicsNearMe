@@ -18,9 +18,9 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4XM-xZ-wg4">
-                    <rect key="frame" x="0.0" y="0.0" width="37" height="37"/>
-                    <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4XM-xZ-wg4">
+                    <rect key="frame" x="282" y="249" width="37" height="37"/>
+                    <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </activityIndicatorView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lvN-rb-waq">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="535"/>
@@ -58,6 +58,8 @@
                 <constraint firstItem="YWl-ZW-hOY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Fdv-zi-bzI"/>
                 <constraint firstItem="YWl-ZW-hOY" firstAttribute="top" secondItem="lvN-rb-waq" secondAttribute="bottom" id="MC2-LW-AGK"/>
                 <constraint firstItem="lvN-rb-waq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MCc-dB-OwZ"/>
+                <constraint firstItem="4XM-xZ-wg4" firstAttribute="centerY" secondItem="lvN-rb-waq" secondAttribute="centerY" id="Rsg-LW-ffr"/>
+                <constraint firstItem="4XM-xZ-wg4" firstAttribute="centerX" secondItem="lvN-rb-waq" secondAttribute="centerX" id="eAJ-Wu-hCy"/>
                 <constraint firstAttribute="trailing" secondItem="YWl-ZW-hOY" secondAttribute="trailing" id="iZW-u4-rDD"/>
                 <constraint firstItem="lvN-rb-waq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nfa-jB-f3t"/>
                 <constraint firstAttribute="trailing" secondItem="lvN-rb-waq" secondAttribute="trailing" id="xQ1-NF-yR2"/>
