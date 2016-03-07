@@ -13,7 +13,6 @@ class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewP
 
 	@IBOutlet var mapView: MKMapView!
 	@IBOutlet var sliderView: PNMapSliderView!
-	@IBOutlet weak var photoButton: UIButton!
 	
 	var photoManager = PNInstagramPhotoManager.sharedInstance
 	
@@ -23,11 +22,9 @@ class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewP
 		
 		let gesture = UITapGestureRecognizer(target: self, action: "tappedMap:")
 		self.view.addGestureRecognizer(gesture)
-		self.photoButton.enabled = false
 	}
 	
 	func tappedMap(sender: UITapGestureRecognizer) {
-		self.photoButton.enabled = true
 		let touchPoint = sender.locationInView(mapView)
 		let locationTouched = mapView.convertPoint(touchPoint, toCoordinateFromView: mapView)
 		// Clear previous pins
@@ -42,6 +39,8 @@ class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewP
 		let radius = UInt(sliderView.slider.value)
 		photoManager.currentLocation = locationTouched
 		photoManager.radius = radius
+		
+		goToPhotos()
 	}
 
 	func sliderValueChanged(value: Meter) {
@@ -53,8 +52,10 @@ class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewP
 		alert.show()
 	}
 	
-	@IBAction func tappedPhotos(sender: AnyObject) {
-		performSegueWithIdentifier(typeAsString(PNCollectionViewController), sender: self)
+	func goToPhotos() {
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
+			self.performSegueWithIdentifier(typeAsString(PNCollectionViewController), sender: self)
+		}
 	}
 	
 	// MARK: - UIAlertViewDelegate
