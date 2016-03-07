@@ -57,21 +57,20 @@ class PNInstagramSessionManager: NSObject, UIWebViewDelegate {
 		webView.delegate = self
 		loginCompletion = completion
 		self.pageFinishedLoading = pageFinishedLoading
-		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
-			let loginComponent = NSURLComponents(string: PNInstagramConstants.AUTH_URL.rawValue)!
-			
-			loginComponent.queryItems = [
-				NSURLQueryItem(name: "client_id", value: PNInstagramConstants.CLIENT_ID.rawValue),
-				NSURLQueryItem(name: "redirect_uri", value: PNInstagramConstants.REDIRECT_URI.rawValue),
-				NSURLQueryItem(name: "response_type", value: "token")
-			]
-			
-			let request = NSMutableURLRequest(URL: loginComponent.URL!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: NSTimeInterval(PNInstagramConstants.TimeOut.rawValue)!)
-			
-			request.HTTPMethod = "POST"
-			
-			webView.loadRequest(request)
-		}
+		
+		let loginComponent = NSURLComponents(string: PNInstagramConstants.AUTH_URL.rawValue)!
+		
+		loginComponent.queryItems = [
+			NSURLQueryItem(name: "client_id", value: PNInstagramConstants.CLIENT_ID.rawValue),
+			NSURLQueryItem(name: "redirect_uri", value: PNInstagramConstants.REDIRECT_URI.rawValue),
+			NSURLQueryItem(name: "response_type", value: "token")
+		]
+		
+		let request = NSMutableURLRequest(URL: loginComponent.URL!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: NSTimeInterval(PNInstagramConstants.TimeOut.rawValue)!)
+		
+		request.HTTPMethod = "POST"
+		
+		webView.loadRequest(request)
 	}
 	
 	// MARK: - webview delegate
@@ -82,7 +81,10 @@ class PNInstagramSessionManager: NSObject, UIWebViewDelegate {
 			let m = accessFragment.rangeOfString("access_token=")
 			if m.location != NSNotFound {
 				PNInstagramSessionManager.sharedInstance.sessionID = accessFragment.substringFromIndex(m.location + m.length)
-				loginCompletion(true)
+				webView.stopLoading()
+				dispatch_async(dispatch_get_main_queue(), { () -> Void in
+					self.loginCompletion(true)
+				})
 				return false
 			}
 		}

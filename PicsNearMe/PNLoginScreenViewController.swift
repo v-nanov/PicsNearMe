@@ -27,7 +27,6 @@ class PNLoginScreenViewController: UIViewController {
 
 		self.activityIndicator.startAnimating()
 		self.webView.hidden = true
-		
 		instagramSessionManager.loadLogin(webView,
 			pageFinishedLoading: { [unowned self] () -> () in
 				var currentWVSize = self.webView.frame.size
@@ -36,10 +35,11 @@ class PNLoginScreenViewController: UIViewController {
 				self.formatWebView(currentWVSize)
 				self.webView.hidden = false
 				self.activityIndicator.stopAnimating()
-			}, completion: { (success) -> () in
+			}, completion: { [unowned self] (success) -> () in
 				let destinationVC = self.storyboard!.instantiateViewControllerWithIdentifier(typeAsString(PNMapViewController))
-				self.showViewController(UINavigationController(rootViewController: destinationVC), sender: self)
-		})
+				let nav = UINavigationController(rootViewController: destinationVC)
+				self.presentViewController(nav, animated: true, completion: nil)
+			})
 		
 	}
 	
