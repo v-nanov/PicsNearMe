@@ -9,7 +9,6 @@
 class PNInstagramPhotoManager {
 	
 	static let sharedInstance = PNInstagramPhotoManager()
-
 	var urlSession = NSURLSession.sharedSession()
 	var currentLocation = CLLocationCoordinate2D(latitude: 48.858844, longitude: 2.294351)
 	var radius = UInt(1000)

@@ -10,8 +10,10 @@ class PNCollectionViewController: UICollectionViewController {
 	
 	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 	@IBOutlet weak var barButton: UIBarButtonItem!
-	let instagramManager = PNInstagramPhotoManager.sharedInstance
 	
+	var instagramManager = PNInstagramPhotoManager.sharedInstance
+	var downloadManager = PNDownloaderManager.sharedInstance
+
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
 		activityIndicator.startAnimating()
@@ -44,9 +46,9 @@ class PNCollectionViewController: UICollectionViewController {
 		
 		let imageSetBlock = { (url: NSURL, uuid: String) in
 			cell.activityIndicator.startAnimating()
-			dispatch_async(self.instagramManager.downloadManager.downloaderDispatchQueue, { () -> Void in
+			dispatch_async(self.downloadManager.downloaderDispatchQueue, { () -> Void in
 				do {
-					let img = try self.instagramManager.downloadManager.getImageFromURL(url)
+					let img = try self.downloadManager.getImageFromURL(url)
 					
 					let visibleCells = collectionView.visibleCells().filter({
 						return ($0 as! PNPicCellView).uuid == uuid
@@ -66,7 +68,7 @@ class PNCollectionViewController: UICollectionViewController {
 		}
 		
 		do {
-			cell.imageView.image = try self.instagramManager.downloadManager.getImageFromCache(currentPhoto.photoURL)
+			cell.imageView.image = try self.downloadManager.getImageFromCache(currentPhoto.photoURL)
 		} catch _ {
 			imageSetBlock(currentPhoto.photoURL, cell.uuid)
 		}
