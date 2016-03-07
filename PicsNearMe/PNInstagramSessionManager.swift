@@ -6,15 +6,18 @@
 //  Copyright © 2016 dnthome. All rights reserved.
 //
 
-class PNInstagramSessionManager: NSObject, UIWebViewDelegate {
-	static let sharedInstance = PNInstagramSessionManager()
+class PNInstagramSessionManager: NSObject , UIWebViewDelegate {
+	
+	static let sharedInstance:PNInstagramSessionManager = PNInstagramSessionManager()
+	
+	var urlSession = NSURLSession.sharedSession()
 	var sessionID: String = ""
 	
 	private var loginCompletion = { (success: Bool) -> () in }
 	private var pageFinishedLoading = { () -> () in }
 	
 	func logout() {
-		let session = NSURLSession.sharedSession().dataTaskWithRequest(NSURLRequest(URL: NSURL(string: PNInstagramConstants.LOGOUT.rawValue)!)) { _,_,_ in
+		let session = urlSession.dataTaskWithRequest(NSURLRequest(URL: NSURL(string: PNInstagramConstants.LOGOUT.rawValue)!)) { _,_,_ in
 		}
 		session.resume()
 	}
@@ -46,7 +49,7 @@ class PNInstagramSessionManager: NSObject, UIWebViewDelegate {
 		if let accessFragment: NSString = components.fragment {
 			let m = accessFragment.rangeOfString("access_token=")
 			if m.location != NSNotFound {
-				PNInstagramSessionManager.sharedInstance.sessionID = accessFragment.substringFromIndex(m.location + m.length)
+				self.sessionID = accessFragment.substringFromIndex(m.location + m.length)
 				webView.stopLoading()
 				dispatch_async(dispatch_get_main_queue(), { () -> Void in
 					self.loginCompletion(true)

@@ -9,8 +9,8 @@
 class PNInstagramPhotoManager {
 	
 	static let sharedInstance = PNInstagramPhotoManager()
-	var downloadManager = PNDownloaderManager.sharedInstance
-	
+
+	var urlSession = NSURLSession.sharedSession()
 	var currentLocation = CLLocationCoordinate2D(latitude: 48.858844, longitude: 2.294351)
 	var radius = UInt(1000)
 	
@@ -29,8 +29,9 @@ class PNInstagramPhotoManager {
 				completion(photos: photoObjs)
 			})
 		}
+		
 		if let url = NSURL(string: str) {
-			NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (d: NSData?, res: NSURLResponse?, err: NSError?) -> Void in
+			urlSession.dataTaskWithURL(url, completionHandler: { (d: NSData?, res: NSURLResponse?, err: NSError?) -> Void in
 				guard err == nil,
 					let data = d,
 					let json = (try? NSJSONSerialization.JSONObjectWithData(data, options: [])) as? [String:AnyObject],

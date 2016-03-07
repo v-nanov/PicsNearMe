@@ -30,20 +30,7 @@ class PNInstagramPhotoModel_Tests: XCTestCase {
 	}
 	
 	func test_Ideal() {
-		let sut = PNInstagramPhotoModel(dict: [
-			"location" : [
-				"latitude" : 40.0,
-				"longitude" : 40.0
-			],
-			"images" : [
-				"thumbnail" : [
-					"url" : "http://placekitten.com.s3.amazonaws.com/homepage-samples/200/287.jpg"
-				],
-			],
-			"user" : [
-				"username" : "Kitten"
-			],
-		])
+		let sut = PNInstagramPhotoModel(dict: mockPhotoData_good)
 		
 		XCTAssertEqual(sut.username, "Kitten")
 		XCTAssertEqual(sut.location.latitude, 40.0)

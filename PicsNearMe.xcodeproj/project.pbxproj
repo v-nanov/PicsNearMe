@@ -28,6 +28,12 @@
 		2FFAD52D1C8D6D6C00894949 /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAD4DE1C8D564100894949 /* CLLocationCoordinate2D+Extension.swift */; };
 		2FFAD52E1C8D6D7600894949 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEFC61C8A831600337F18 /* Meter.swift */; };
 		2FFAD5301C8D70A200894949 /* Meter_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAD52F1C8D70A200894949 /* Meter_Tests.swift */; };
+		2FFAD5331C8D773000894949 /* PNInstagramPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9729D5E41C8A2F7F009002E6 /* PNInstagramPhotoManager.swift */; };
+		2FFAD5341C8D777800894949 /* PNDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAD4E41C8D577600894949 /* PNDownloadManager.swift */; };
+		2FFAD5351C8D777B00894949 /* PNInstagramSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAD4E21C8D571500894949 /* PNInstagramSessionManager.swift */; };
+		2FFAD5361C8D778D00894949 /* PNCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9729D5E21C8A2D58009002E6 /* PNCommon.swift */; };
+		2FFAD5381C8D79E800894949 /* PNInstagramPhotoManager_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAD5371C8D79E800894949 /* PNInstagramPhotoManager_Tests.swift */; };
+		2FFAD53C1C8D7C3500894949 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAD53B1C8D7C3500894949 /* Mocks.swift */; };
 		9729D5BF1C89F306009002E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9729D5BE1C89F306009002E6 /* AppDelegate.swift */; };
 		9729D5C11C89F306009002E6 /* PNMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9729D5C01C89F306009002E6 /* PNMapViewController.swift */; };
 		9729D5C41C89F306009002E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9729D5C21C89F306009002E6 /* Main.storyboard */; };
@@ -73,6 +79,8 @@
 		2FFAD5221C8D69F500894949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FFAD52B1C8D6D1300894949 /* CLLocationCoordinate2D_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D_Tests.swift; sourceTree = "<group>"; };
 		2FFAD52F1C8D70A200894949 /* Meter_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meter_Tests.swift; sourceTree = "<group>"; };
+		2FFAD5371C8D79E800894949 /* PNInstagramPhotoManager_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNInstagramPhotoManager_Tests.swift; sourceTree = "<group>"; };
+		2FFAD53B1C8D7C3500894949 /* Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		9729D5BB1C89F306009002E6 /* PicsNearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicsNearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9729D5BE1C89F306009002E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9729D5C01C89F306009002E6 /* PNMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PNMapViewController.swift; sourceTree = "<group>"; };
@@ -192,9 +200,19 @@
 				2FFAD5201C8D69F500894949 /* PNInstagramPhotoModel_Tests.swift */,
 				2FFAD52B1C8D6D1300894949 /* CLLocationCoordinate2D_Tests.swift */,
 				2FFAD52F1C8D70A200894949 /* Meter_Tests.swift */,
+				2FFAD5371C8D79E800894949 /* PNInstagramPhotoManager_Tests.swift */,
+				2FFAD53D1C8D7C4C00894949 /* Mock */,
 				2FFAD5221C8D69F500894949 /* Info.plist */,
 			);
 			path = TestHostTests;
+			sourceTree = "<group>";
+		};
+		2FFAD53D1C8D7C4C00894949 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				2FFAD53B1C8D7C3500894949 /* Mocks.swift */,
+			);
+			name = Mock;
 			sourceTree = "<group>";
 		};
 		9729D5B21C89F306009002E6 = {
@@ -372,8 +390,12 @@
 				2FFAD50E1C8D69F500894949 /* ViewController.swift in Sources */,
 				2FFAD50C1C8D69F500894949 /* AppDelegate.swift in Sources */,
 				2FFAD52E1C8D6D7600894949 /* Meter.swift in Sources */,
+				2FFAD5341C8D777800894949 /* PNDownloadManager.swift in Sources */,
 				2FFAD52A1C8D6A9200894949 /* PNInstagramPhotoModel.swift in Sources */,
+				2FFAD5351C8D777B00894949 /* PNInstagramSessionManager.swift in Sources */,
 				2FFAD52D1C8D6D6C00894949 /* CLLocationCoordinate2D+Extension.swift in Sources */,
+				2FFAD5331C8D773000894949 /* PNInstagramPhotoManager.swift in Sources */,
+				2FFAD5361C8D778D00894949 /* PNCommon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,9 +403,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FFAD53C1C8D7C3500894949 /* Mocks.swift in Sources */,
 				2FFAD5211C8D69F500894949 /* PNInstagramPhotoModel_Tests.swift in Sources */,
 				2FFAD52C1C8D6D1300894949 /* CLLocationCoordinate2D_Tests.swift in Sources */,
 				2FFAD5301C8D70A200894949 /* Meter_Tests.swift in Sources */,
+				2FFAD5381C8D79E800894949 /* PNInstagramPhotoManager_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +643,7 @@
 				2FFAD5251C8D69F500894949 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2FFAD5261C8D69F500894949 /* Build configuration list for PBXNativeTarget "TestHostTests" */ = {
 			isa = XCConfigurationList;
@@ -627,6 +652,7 @@
 				2FFAD5281C8D69F500894949 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9729D5B61C89F306009002E6 /* Build configuration list for PBXProject "PicsNearMe" */ = {
 			isa = XCConfigurationList;
