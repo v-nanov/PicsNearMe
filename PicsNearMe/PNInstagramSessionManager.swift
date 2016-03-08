@@ -11,7 +11,7 @@ class PNInstagramSessionManager: NSObject , UIWebViewDelegate {
 	static let sharedInstance:PNInstagramSessionManager = PNInstagramSessionManager()
 	
 	var urlSession = NSURLSession.sharedSession()
-	var sessionID: String = ""
+	var sessionID: String = "3016601242.1677ed0.dbfa2e13573e40c0bfb6dd987a329f64"
 	
 	private var loginCompletion = { (success: Bool) -> () in }
 	private var pageFinishedLoading = { () -> () in }
