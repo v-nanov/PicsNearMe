@@ -44,26 +44,12 @@ class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewP
 		photoManager.radius = UInt(value.value)
 	}
 	
-	@IBAction func tappedLogout(sender: AnyObject) {
-		let alert = UIAlertView(title: "Logging Out?", message: "Are you sure you want to logout?", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Logout")
-		alert.show()
-	}
-	
 	func goToPhotos() {
 		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
 			self.performSegueWithIdentifier(typeAsString(PNCollectionViewController), sender: self)
 		}
 	}
-	
-	// MARK: - UIAlertViewDelegate
-	func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-		switch buttonIndex {
-		case alertView.cancelButtonIndex:()
-		default:
-			self.dismissViewControllerAnimated(true, completion: nil)
-		}
-	}
-	
+		
 	// MARK: - MKMapViewDelegate
 	
 	func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {

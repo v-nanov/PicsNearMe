@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F0E1C7C1C8BA86E004B1796 /* PNLoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0E1C7B1C8BA86E004B1796 /* PNLoginScreenViewController.swift */; };
 		2F3BEFC51C8A665800337F18 /* PNCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEFC41C8A665800337F18 /* PNCollectionViewController.swift */; };
 		2F3BEFC71C8A831600337F18 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEFC61C8A831600337F18 /* Meter.swift */; };
 		2F3BEFC91C8B916A00337F18 /* PNMapSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEFC81C8B916A00337F18 /* PNMapSliderView.swift */; };
@@ -58,7 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F0E1C7B1C8BA86E004B1796 /* PNLoginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNLoginScreenViewController.swift; sourceTree = "<group>"; };
 		2F3BEFC41C8A665800337F18 /* PNCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNCollectionViewController.swift; sourceTree = "<group>"; };
 		2F3BEFC61C8A831600337F18 /* Meter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meter.swift; sourceTree = "<group>"; };
 		2F3BEFC81C8B916A00337F18 /* PNMapSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNMapSliderView.swift; sourceTree = "<group>"; };
@@ -135,7 +133,6 @@
 		2FFAD4D71C8D544800894949 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2F0E1C7B1C8BA86E004B1796 /* PNLoginScreenViewController.swift */,
 				9729D5C01C89F306009002E6 /* PNMapViewController.swift */,
 				2F3BEFC41C8A665800337F18 /* PNCollectionViewController.swift */,
 			);
@@ -421,7 +418,6 @@
 			files = (
 				9729D5E31C8A2D58009002E6 /* PNCommon.swift in Sources */,
 				9729D5DF1C89F3E0009002E6 /* PNPicCellView.swift in Sources */,
-				2F0E1C7C1C8BA86E004B1796 /* PNLoginScreenViewController.swift in Sources */,
 				2FFAD4E51C8D577600894949 /* PNDownloadManager.swift in Sources */,
 				2FFAD4DF1C8D564100894949 /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				2FFAD4DD1C8D553700894949 /* PNInstagramPhotoModel.swift in Sources */,
