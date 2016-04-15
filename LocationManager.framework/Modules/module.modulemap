@@ -1,0 +1,10 @@
+framework module LocationManager {
+  umbrella header "LocationManager.h"
+
+  export *
+  module * { export * }
+}
+
+module LocationManager.Swift {
+    header "LocationManager-Swift.h"
+}

@@ -17,8 +17,25 @@ class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewP
 		super.viewDidLoad()
 		mapView.delegate = self
 		
-		let gesture = UITapGestureRecognizer(target: self, action: "tappedMap:")
+		let gesture = UITapGestureRecognizer(target: self, action: #selector(PNMapViewController.tappedMap(_:)))
 		self.view.addGestureRecognizer(gesture)
+	}
+	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		LocationManager.sharedInstance.autoUpdate = true
+		LocationManager.sharedInstance.startUpdatingLocationWithCompletionHandler { (latitude, longitude, status, verboseMessage, error) in
+			let location = CLLocation(latitude: latitude, longitude: longitude)
+			self.mapView.setRegion(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)), animated: true)
+			let annotation = MKPointAnnotation()
+			annotation.coordinate = location.coordinate
+			
+			self.mapView.removeAnnotations(self.mapView.annotations)
+			self.mapView.addAnnotation(annotation)
+			self.mapView.showAnnotations([annotation], animated: true)
+			
+			LocationManager.sharedInstance.stopUpdatingLocation()
+		}
 	}
 	
 	func tappedMap(sender: UITapGestureRecognizer) {
