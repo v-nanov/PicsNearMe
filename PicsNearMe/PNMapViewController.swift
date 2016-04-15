@@ -19,6 +19,10 @@ class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewP
 		
 		let gesture = UITapGestureRecognizer(target: self, action: #selector(PNMapViewController.tappedMap(_:)))
 		self.view.addGestureRecognizer(gesture)
+		LocationManager.sharedInstance.locationFound = { (latitude: Double, longitude: Double) -> () in
+			print(latitude, longitude)
+		}
+
 	}
 	
 	override func viewDidAppear(animated: Bool) {
@@ -33,6 +37,12 @@ class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewP
 			self.mapView.removeAnnotations(self.mapView.annotations)
 			self.mapView.addAnnotation(annotation)
 			self.mapView.showAnnotations([annotation], animated: true)
+			print(latitude, longitude)
+			
+			// set up photos
+			let radius = UInt(self.sliderView.slider.value)
+			self.photoManager.currentLocation = location.coordinate
+			self.photoManager.radius = radius
 			
 			LocationManager.sharedInstance.stopUpdatingLocation()
 		}
@@ -61,7 +71,7 @@ class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewP
 		photoManager.radius = UInt(value.value)
 	}
 	
-	func goToPhotos() {
+	@IBAction func goToPhotos() {
 		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)), dispatch_get_main_queue()) {
 			self.performSegueWithIdentifier(typeAsString(PNCollectionViewController), sender: self)
 		}

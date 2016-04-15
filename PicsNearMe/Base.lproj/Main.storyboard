@@ -37,9 +37,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-di-GZv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
-                            </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0Q-12-iFu" customClass="PNMapSliderView" customModule="PicsNearMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="429" width="320" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,24 +44,37 @@
                                     <constraint firstAttribute="height" constant="75" id="6Dh-zh-K8n"/>
                                 </constraints>
                             </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pV3-QF-Yml">
+                                <rect key="frame" x="20" y="20" width="280" height="401"/>
+                            </mapView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wG3-di-GZv" firstAttribute="leading" secondItem="XSs-cm-EUy" secondAttribute="leading" id="1nZ-Pb-rWZ"/>
-                            <constraint firstAttribute="trailing" secondItem="wG3-di-GZv" secondAttribute="trailing" id="84v-wh-8Zq"/>
                             <constraint firstAttribute="trailing" secondItem="n0Q-12-iFu" secondAttribute="trailing" id="ANG-Kx-1OJ"/>
-                            <constraint firstItem="Rpk-4A-ivQ" firstAttribute="top" secondItem="n0Q-12-iFu" secondAttribute="bottom" id="V6X-cb-L3H"/>
+                            <constraint firstItem="n0Q-12-iFu" firstAttribute="top" secondItem="pV3-QF-Yml" secondAttribute="bottom" constant="8" id="B1K-an-J5r"/>
+                            <constraint firstAttribute="bottom" secondItem="n0Q-12-iFu" secondAttribute="bottom" id="Cda-kj-AKm"/>
+                            <constraint firstItem="pV3-QF-Yml" firstAttribute="top" secondItem="P1l-IY-r2G" secondAttribute="bottom" constant="20" id="JA3-4X-4cj"/>
+                            <constraint firstItem="pV3-QF-Yml" firstAttribute="leading" secondItem="XSs-cm-EUy" secondAttribute="leading" constant="20" id="Wyg-DX-7gR"/>
                             <constraint firstItem="n0Q-12-iFu" firstAttribute="leading" secondItem="XSs-cm-EUy" secondAttribute="leading" id="aT2-kR-Lg4"/>
-                            <constraint firstItem="n0Q-12-iFu" firstAttribute="top" secondItem="wG3-di-GZv" secondAttribute="bottom" id="dgB-uT-juj"/>
-                            <constraint firstItem="wG3-di-GZv" firstAttribute="top" secondItem="P1l-IY-r2G" secondAttribute="bottom" id="w0s-ge-JbS"/>
+                            <constraint firstAttribute="trailing" secondItem="pV3-QF-Yml" secondAttribute="trailing" constant="20" id="my2-vB-6Vn"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="Rv4-mz-P4U"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="Rv4-mz-P4U">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="SnH-il-dKQ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nQu-4a-Due">
+                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Photos"/>
+                                <connections>
+                                    <action selector="goToPhotos" destination="sPZ-jC-EWq" eventType="touchUpInside" id="W2B-2L-Z7V"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="mapView" destination="wG3-di-GZv" id="tRZ-Aa-dWj"/>
+                        <outlet property="mapView" destination="pV3-QF-Yml" id="s5h-xI-T24"/>
                         <outlet property="sliderView" destination="n0Q-12-iFu" id="hW1-oM-bIC"/>
-                        <outlet property="view" destination="wG3-di-GZv" id="ABR-cm-7Ui"/>
                         <segue destination="vMZ-dd-rnu" kind="push" identifier="PNCollectionViewController" id="Qdb-OH-tal"/>
                     </connections>
                 </viewController>
