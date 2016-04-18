@@ -325,6 +325,7 @@
 				9729D5B91C89F306009002E6 /* Resources */,
 				2F5FB29D1CC46C010045E6DA /* Embed Frameworks */,
 				2F5FB29F1CC476BC0045E6DA /* ShellScript */,
+				2F5FB2A01CC479D20045E6DA /* Run Script Carthage App Store Submission */,
 			);
 			buildRules = (
 			);
@@ -423,6 +424,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Set the build number to the count of Git commits\nbuildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+		2F5FB2A01CC479D20045E6DA /* Run Script Carthage App Store Submission */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/DHConstraintBuilder.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/LocationManager.framework",
+			);
+			name = "Run Script Carthage App Store Submission";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
