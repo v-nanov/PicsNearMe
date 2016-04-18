@@ -6,10 +6,11 @@
 //  Copyright © 2016 dnthome. All rights reserved.
 //
 import DHConstraintBuilder
+import LocationManager
 
 class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewProtocol, UIAlertViewDelegate {
 
-	@IBOutlet var mapView: MKMapView!
+	var mapView: MKMapView = MKMapView()
 	@IBOutlet var sliderView: PNMapSliderView!
 	
 	var photoManager = PNInstagramPhotoManager.sharedInstance
@@ -17,7 +18,7 @@ class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewP
 	override func loadView() {
 		super.loadView()
 		view.addConstraints_H(() |-^ mapView ^-| ())
-		view.addConstraints_V(() |-^ mapView ^-^ sliderView ^-| ())
+		view.addConstraints_V(() |-^ mapView ^-^ sliderView)
 	}
 	
 	override func viewDidLoad() {
@@ -26,6 +27,33 @@ class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewP
 		
 		let gesture = UITapGestureRecognizer(target: self, action: "tappedMap:")
 		self.view.addGestureRecognizer(gesture)
+		LocationManager.sharedInstance.locationFound = { (latitude: Double, longitude: Double) -> () in
+			print(latitude, longitude)
+		}
+
+	}
+	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		LocationManager.sharedInstance.autoUpdate = true
+		LocationManager.sharedInstance.startUpdatingLocationWithCompletionHandler { (latitude, longitude, status, verboseMessage, error) in
+			let location = CLLocation(latitude: latitude, longitude: longitude)
+			self.mapView.setRegion(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)), animated: true)
+			let annotation = MKPointAnnotation()
+			annotation.coordinate = location.coordinate
+			
+			self.mapView.removeAnnotations(self.mapView.annotations)
+			self.mapView.addAnnotation(annotation)
+			self.mapView.showAnnotations([annotation], animated: true)
+			print(latitude, longitude)
+			
+			// set up photos
+			let radius = UInt(self.sliderView.slider.value)
+			self.photoManager.currentLocation = location.coordinate
+			self.photoManager.radius = radius
+
+			LocationManager.sharedInstance.stopUpdatingLocation()
+		}
 	}
 	
 	func tappedMap(sender: UITapGestureRecognizer) {

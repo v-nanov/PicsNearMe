@@ -53,19 +53,24 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="Rv4-mz-P4U"/>
+                    <navigationItem key="navigationItem" id="Rv4-mz-P4U">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="I2v-Ph-Zy6">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="su3-By-Pt2">
+                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Pix"/>
+                                <connections>
+                                    <segue destination="vMZ-dd-rnu" kind="push" id="ac9-cC-LpV"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="mapView" destination="wG3-di-GZv" id="tRZ-Aa-dWj"/>
                         <outlet property="sliderView" destination="n0Q-12-iFu" id="hW1-oM-bIC"/>
-                        <outlet property="view" destination="wG3-di-GZv" id="ABR-cm-7Ui"/>
                         <segue destination="vMZ-dd-rnu" kind="push" identifier="PNCollectionViewController" id="Qdb-OH-tal"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRc-gY-fVO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" id="wG3-di-GZv">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </mapView>
             </objects>
             <point key="canvasLocation" x="425" y="401"/>
         </scene>
@@ -138,4 +143,7 @@
             <point key="canvasLocation" x="810" y="401"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ac9-cC-LpV"/>
+    </inferredMetricsTieBreakers>
 </document>
