@@ -5,6 +5,7 @@
 //  Created by Derrick Ho on 3/4/16.
 //  Copyright © 2016 dnthome. All rights reserved.
 //
+import DHConstraintBuilder
 
 class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewProtocol, UIAlertViewDelegate {
 
@@ -12,6 +13,12 @@ class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewP
 	@IBOutlet var sliderView: PNMapSliderView!
 	
 	var photoManager = PNInstagramPhotoManager.sharedInstance
+	
+	override func loadView() {
+		super.loadView()
+		view.addConstraints_H(() |-^ mapView ^-| ())
+		view.addConstraints_V(() |-^ mapView ^-^ sliderView ^-| ())
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()

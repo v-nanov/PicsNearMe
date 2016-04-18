@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wzv-za-AKi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="wzv-za-AKi">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -37,9 +37,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-di-GZv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
-                            </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n0Q-12-iFu" customClass="PNMapSliderView" customModule="PicsNearMe" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="429" width="320" height="75"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,13 +47,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wG3-di-GZv" firstAttribute="leading" secondItem="XSs-cm-EUy" secondAttribute="leading" id="1nZ-Pb-rWZ"/>
-                            <constraint firstAttribute="trailing" secondItem="wG3-di-GZv" secondAttribute="trailing" id="84v-wh-8Zq"/>
                             <constraint firstAttribute="trailing" secondItem="n0Q-12-iFu" secondAttribute="trailing" id="ANG-Kx-1OJ"/>
                             <constraint firstItem="Rpk-4A-ivQ" firstAttribute="top" secondItem="n0Q-12-iFu" secondAttribute="bottom" id="V6X-cb-L3H"/>
                             <constraint firstItem="n0Q-12-iFu" firstAttribute="leading" secondItem="XSs-cm-EUy" secondAttribute="leading" id="aT2-kR-Lg4"/>
-                            <constraint firstItem="n0Q-12-iFu" firstAttribute="top" secondItem="wG3-di-GZv" secondAttribute="bottom" id="dgB-uT-juj"/>
-                            <constraint firstItem="wG3-di-GZv" firstAttribute="top" secondItem="P1l-IY-r2G" secondAttribute="bottom" id="w0s-ge-JbS"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -69,6 +62,10 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRc-gY-fVO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" id="wG3-di-GZv">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </mapView>
             </objects>
             <point key="canvasLocation" x="425" y="401"/>
         </scene>

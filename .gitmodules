@@ -1,0 +1,6 @@
+[submodule "Carthage/Checkouts/DHConstraintBuilder"]
+	path = Carthage/Checkouts/DHConstraintBuilder
+	url = https://github.com/wh1pch81n/DHConstraintBuilder.git
+[submodule "Carthage/Checkouts/LocationManager"]
+	path = Carthage/Checkouts/LocationManager
+	url = https://github.com/wh1pch81n/LocationManager.git
