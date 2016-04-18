@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F0EBB2A1CC08660008E80DB /* LocationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0EBB291CC08660008E80DB /* LocationManager.framework */; };
-		2F0EBB2B1CC08660008E80DB /* LocationManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0EBB291CC08660008E80DB /* LocationManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2F3BEFC51C8A665800337F18 /* PNCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEFC41C8A665800337F18 /* PNCollectionViewController.swift */; };
 		2F3BEFC71C8A831600337F18 /* Meter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEFC61C8A831600337F18 /* Meter.swift */; };
 		2F3BEFC91C8B916A00337F18 /* PNMapSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3BEFC81C8B916A00337F18 /* PNMapSliderView.swift */; };
 		2F3BEFCB1C8B951C00337F18 /* PNMapSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F3BEFCA1C8B951C00337F18 /* PNMapSliderView.xib */; };
+		2F5FB2931CC4602A0045E6DA /* DHConstraintBuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5FB2911CC4602A0045E6DA /* DHConstraintBuilder.framework */; };
+		2F5FB2941CC4602A0045E6DA /* DHConstraintBuilder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5FB2911CC4602A0045E6DA /* DHConstraintBuilder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F5FB2951CC4602A0045E6DA /* LocationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5FB2921CC4602A0045E6DA /* LocationManager.framework */; };
+		2F5FB2961CC4602A0045E6DA /* LocationManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5FB2921CC4602A0045E6DA /* LocationManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2FCA4AE31C8DEEEB0032FBD1 /* PNCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA4AE21C8DEEEB0032FBD1 /* PNCollectionViewHeader.swift */; };
 		2FFAD4DD1C8D553700894949 /* PNInstagramPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAD4DC1C8D553700894949 /* PNInstagramPhotoModel.swift */; };
 		2FFAD4DF1C8D564100894949 /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAD4DE1C8D564100894949 /* CLLocationCoordinate2D+Extension.swift */; };
@@ -65,7 +67,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2F0EBB2B1CC08660008E80DB /* LocationManager.framework in Embed Frameworks */,
+				2F5FB2941CC4602A0045E6DA /* DHConstraintBuilder.framework in Embed Frameworks */,
+				2F5FB2961CC4602A0045E6DA /* LocationManager.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,11 +76,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2F0EBB291CC08660008E80DB /* LocationManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LocationManager.framework; sourceTree = "<group>"; };
 		2F3BEFC41C8A665800337F18 /* PNCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNCollectionViewController.swift; sourceTree = "<group>"; };
 		2F3BEFC61C8A831600337F18 /* Meter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meter.swift; sourceTree = "<group>"; };
 		2F3BEFC81C8B916A00337F18 /* PNMapSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNMapSliderView.swift; sourceTree = "<group>"; };
 		2F3BEFCA1C8B951C00337F18 /* PNMapSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PNMapSliderView.xib; sourceTree = "<group>"; };
+		2F5FB2911CC4602A0045E6DA /* DHConstraintBuilder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DHConstraintBuilder.framework; path = Carthage/Build/iOS/DHConstraintBuilder.framework; sourceTree = "<group>"; };
+		2F5FB2921CC4602A0045E6DA /* LocationManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocationManager.framework; path = Carthage/Build/iOS/LocationManager.framework; sourceTree = "<group>"; };
 		2FCA4AE21C8DEEEB0032FBD1 /* PNCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNCollectionViewHeader.swift; sourceTree = "<group>"; };
 		2FFAD4DC1C8D553700894949 /* PNInstagramPhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNInstagramPhotoModel.swift; sourceTree = "<group>"; };
 		2FFAD4DE1C8D564100894949 /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
@@ -132,8 +136,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F5FB2951CC4602A0045E6DA /* LocationManager.framework in Frameworks */,
 				9729D5E91C8A306C009002E6 /* MapKit.framework in Frameworks */,
-				2F0EBB2A1CC08660008E80DB /* LocationManager.framework in Frameworks */,
+				2F5FB2931CC4602A0045E6DA /* DHConstraintBuilder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +241,8 @@
 		9729D5B21C89F306009002E6 = {
 			isa = PBXGroup;
 			children = (
-				2F0EBB291CC08660008E80DB /* LocationManager.framework */,
+				2F5FB2911CC4602A0045E6DA /* DHConstraintBuilder.framework */,
+				2F5FB2921CC4602A0045E6DA /* LocationManager.framework */,
 				9729D5E81C8A306C009002E6 /* MapKit.framework */,
 				9729D5BD1C89F306009002E6 /* PicsNearMe */,
 				2FFAD50A1C8D69F500894949 /* TestHost */,
@@ -638,7 +644,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = PicsNearMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -658,7 +664,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = PicsNearMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

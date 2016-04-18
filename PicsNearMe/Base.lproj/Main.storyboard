@@ -44,19 +44,12 @@
                                     <constraint firstAttribute="height" constant="75" id="6Dh-zh-K8n"/>
                                 </constraints>
                             </view>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pV3-QF-Yml">
-                                <rect key="frame" x="20" y="20" width="280" height="401"/>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="n0Q-12-iFu" secondAttribute="trailing" id="ANG-Kx-1OJ"/>
-                            <constraint firstItem="n0Q-12-iFu" firstAttribute="top" secondItem="pV3-QF-Yml" secondAttribute="bottom" constant="8" id="B1K-an-J5r"/>
                             <constraint firstAttribute="bottom" secondItem="n0Q-12-iFu" secondAttribute="bottom" id="Cda-kj-AKm"/>
-                            <constraint firstItem="pV3-QF-Yml" firstAttribute="top" secondItem="P1l-IY-r2G" secondAttribute="bottom" constant="20" id="JA3-4X-4cj"/>
-                            <constraint firstItem="pV3-QF-Yml" firstAttribute="leading" secondItem="XSs-cm-EUy" secondAttribute="leading" constant="20" id="Wyg-DX-7gR"/>
                             <constraint firstItem="n0Q-12-iFu" firstAttribute="leading" secondItem="XSs-cm-EUy" secondAttribute="leading" id="aT2-kR-Lg4"/>
-                            <constraint firstAttribute="trailing" secondItem="pV3-QF-Yml" secondAttribute="trailing" constant="20" id="my2-vB-6Vn"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -79,6 +72,10 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRc-gY-fVO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" id="pV3-QF-Yml">
+                    <rect key="frame" x="0.0" y="0.0" width="280" height="401"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </mapView>
             </objects>
             <point key="canvasLocation" x="425" y="401"/>
         </scene>
