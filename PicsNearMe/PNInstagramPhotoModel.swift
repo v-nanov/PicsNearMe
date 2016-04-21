@@ -10,6 +10,8 @@ struct PNInstagramPhotoModel {
 	var photoURL = NSURL()
 	var username = String()
 	var location = CLLocationCoordinate2D()
+	var id = String() // instagram unique id
+	var visible = true
 	
 	init(dict: [String:AnyObject]) {
 		for (key, value) in dict {
@@ -26,6 +28,10 @@ struct PNInstagramPhotoModel {
 					let url = NSURL(string: thumbnailurl)
 				{
 					photoURL = url
+				}
+			case "id":
+				if let id = value as? String {
+					self.id = id
 				}
 			case "user":
 				if let un = value["username"] as? String {

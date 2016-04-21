@@ -25,7 +25,7 @@ class PNMapViewController: UIViewController, MKMapViewDelegate, PNMapSliderViewP
 		super.viewDidLoad()
 		mapView.delegate = self
 		
-		let gesture = UITapGestureRecognizer(target: self, action: "tappedMap:")
+		let gesture = UITapGestureRecognizer(target: self, action: #selector(PNMapViewController.tappedMap(_:)))
 		self.view.addGestureRecognizer(gesture)
 		LocationManager.sharedInstance.locationFound = { (latitude: Double, longitude: Double) -> () in
 			print(latitude, longitude)

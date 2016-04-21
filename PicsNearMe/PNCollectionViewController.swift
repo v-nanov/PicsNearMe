@@ -58,13 +58,46 @@ class PNCollectionViewController: UICollectionViewController {
 	
 	// MARK: - UICollectionViewDataSource
 	
+	override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+		let currentPhoto = instagramManager.recentPhotos[indexPath.item]
+		if currentPhoto.visible {
+			// flag or cancel
+			let alert = UIAlertController(title: "Flag Content?", message: "Do you want to flag content?  If this photo is flagged it will be hidden by default", preferredStyle: UIAlertControllerStyle.Alert)
+			alert.addAction(UIAlertAction(title: "Flag it", style: UIAlertActionStyle.Destructive, handler: { _ in
+				self.instagramManager.recentPhotos[indexPath.item].visible = false
+				collectionView.reloadItemsAtIndexPaths([indexPath])
+				// TODO: Submit flag request async
+				let record = CKRecord.initWithFlaggedPic(withRecordID: currentPhoto.id)
+				record.instagramID = currentPhoto.id
+				CKContainer.defaultContainer().publicCloudDatabase.saveRecord(record as! CKRecord, completionHandler: { (record: CKRecord?, err: NSError?) in
+					guard err == nil else {
+						print(err)
+						return
+					}
+				})
+			}))
+			alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
+			self.presentViewController(alert, animated: true, completion: nil)
+		} else {
+			// temporarily unflag
+			let alert = UIAlertController(title: "Reveal Content?", message: "Do you want to temporarily reveal flagged content?", preferredStyle: UIAlertControllerStyle.Alert)
+			alert.addAction(UIAlertAction(title: "Reveal it", style: UIAlertActionStyle.Destructive, handler: { _ in
+				self.instagramManager.recentPhotos[indexPath.item].visible = true
+				collectionView.reloadItemsAtIndexPaths([indexPath])
+			}))
+			alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
+			self.presentViewController(alert, animated: true, completion: nil)
+		}
+	}
+	
 	override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCellWithReuseIdentifier(typeAsString(PNPicCellView), forIndexPath: indexPath) as! PNPicCellView
 		cell.clear()
 		
 		let currentPhoto = instagramManager.recentPhotos[indexPath.item]
 		cell.uuid = NSUUID().UUIDString
-		
+		cell.imageView.hidden = currentPhoto.visible == false
+		cell.flag.text = currentPhoto.visible == false ? "⭕️" : "❌"
 		let imageSetBlock = { (url: NSURL, uuid: String) in
 			cell.activityIndicator.startAnimating()
 			dispatch_async(self.downloadManager.downloaderDispatchQueue, { () -> Void in

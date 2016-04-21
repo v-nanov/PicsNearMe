@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PNPicCellView">
             <connections>
                 <outlet property="activityIndicator" destination="4XM-xZ-wg4" id="qrF-2o-gpg"/>
                 <outlet property="distanceLabel" destination="d6V-5R-HAL" id="NXS-5D-b4i"/>
+                <outlet property="flag" destination="Ga7-Rd-D1X" id="9qd-Mn-Igz"/>
                 <outlet property="imageView" destination="lvN-rb-waq" id="VRm-k5-mEQ"/>
                 <outlet property="usernameLabel" destination="v5M-vP-EDH" id="M9d-vj-lph"/>
             </connections>
@@ -39,6 +40,12 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga7-Rd-D1X">
+                            <rect key="frame" x="550" y="36" width="42" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -46,8 +53,10 @@
                         <constraint firstItem="v5M-vP-EDH" firstAttribute="top" secondItem="YWl-ZW-hOY" secondAttribute="top" constant="8" id="E4Z-4y-fZw"/>
                         <constraint firstItem="d6V-5R-HAL" firstAttribute="leading" secondItem="YWl-ZW-hOY" secondAttribute="leading" id="FlI-ZR-FKM"/>
                         <constraint firstItem="d6V-5R-HAL" firstAttribute="top" secondItem="v5M-vP-EDH" secondAttribute="bottom" constant="8" id="PM1-AI-Tm4"/>
+                        <constraint firstAttribute="trailing" secondItem="Ga7-Rd-D1X" secondAttribute="trailing" constant="8" id="UzJ-t4-izz"/>
                         <constraint firstAttribute="trailing" secondItem="v5M-vP-EDH" secondAttribute="trailing" id="ZvF-fh-0cC"/>
                         <constraint firstAttribute="trailing" secondItem="d6V-5R-HAL" secondAttribute="trailing" id="Zz0-RC-p47"/>
+                        <constraint firstAttribute="bottom" secondItem="Ga7-Rd-D1X" secondAttribute="bottom" constant="8" id="m17-9D-WlC"/>
                         <constraint firstItem="v5M-vP-EDH" firstAttribute="leading" secondItem="YWl-ZW-hOY" secondAttribute="leading" id="wiU-BU-GMi"/>
                     </constraints>
                 </view>

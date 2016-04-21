@@ -10,5 +10,6 @@
 #define PicsNearMe_Bridging_Header_h
 
 @import MapKit;
+@import CloudKit;
 
 #endif /* PicsNearMe_Bridging_Header_h */

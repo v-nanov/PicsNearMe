@@ -15,6 +15,7 @@
 		2F5FB29A1CC46C000045E6DA /* DHConstraintBuilder.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5FB2971CC46C000045E6DA /* DHConstraintBuilder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2F5FB29B1CC46C000045E6DA /* LocationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5FB2981CC46C000045E6DA /* LocationManager.framework */; };
 		2F5FB29C1CC46C000045E6DA /* LocationManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5FB2981CC46C000045E6DA /* LocationManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F7FB5921CC86E7400BF31DA /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7FB5911CC86E7400BF31DA /* CloudKit.framework */; };
 		2FCA4AE31C8DEEEB0032FBD1 /* PNCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCA4AE21C8DEEEB0032FBD1 /* PNCollectionViewHeader.swift */; };
 		2FFAD4DD1C8D553700894949 /* PNInstagramPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAD4DC1C8D553700894949 /* PNInstagramPhotoModel.swift */; };
 		2FFAD4DF1C8D564100894949 /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFAD4DE1C8D564100894949 /* CLLocationCoordinate2D+Extension.swift */; };
@@ -82,6 +83,8 @@
 		2F3BEFCA1C8B951C00337F18 /* PNMapSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PNMapSliderView.xib; sourceTree = "<group>"; };
 		2F5FB2971CC46C000045E6DA /* DHConstraintBuilder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DHConstraintBuilder.framework; path = Carthage/Build/iOS/DHConstraintBuilder.framework; sourceTree = "<group>"; };
 		2F5FB2981CC46C000045E6DA /* LocationManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocationManager.framework; path = Carthage/Build/iOS/LocationManager.framework; sourceTree = "<group>"; };
+		2F7FB58E1CC8694700BF31DA /* PicsNearMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PicsNearMe.entitlements; sourceTree = "<group>"; };
+		2F7FB5911CC86E7400BF31DA /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		2FCA4AE21C8DEEEB0032FBD1 /* PNCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNCollectionViewHeader.swift; sourceTree = "<group>"; };
 		2FFAD4DC1C8D553700894949 /* PNInstagramPhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNInstagramPhotoModel.swift; sourceTree = "<group>"; };
 		2FFAD4DE1C8D564100894949 /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F5FB29B1CC46C000045E6DA /* LocationManager.framework in Frameworks */,
+				2F7FB5921CC86E7400BF31DA /* CloudKit.framework in Frameworks */,
 				9729D5E91C8A306C009002E6 /* MapKit.framework in Frameworks */,
 				2F5FB2991CC46C000045E6DA /* DHConstraintBuilder.framework in Frameworks */,
 			);
@@ -241,6 +245,7 @@
 		9729D5B21C89F306009002E6 = {
 			isa = PBXGroup;
 			children = (
+				2F7FB5911CC86E7400BF31DA /* CloudKit.framework */,
 				2F5FB2971CC46C000045E6DA /* DHConstraintBuilder.framework */,
 				2F5FB2981CC46C000045E6DA /* LocationManager.framework */,
 				9729D5E81C8A306C009002E6 /* MapKit.framework */,
@@ -264,6 +269,7 @@
 		9729D5BD1C89F306009002E6 /* PicsNearMe */ = {
 			isa = PBXGroup;
 			children = (
+				2F7FB58E1CC8694700BF31DA /* PicsNearMe.entitlements */,
 				2FFAD4DB1C8D551F00894949 /* DataModels */,
 				2FFAD4D61C8D543400894949 /* Utility */,
 				2FFAD4DA1C8D54B100894949 /* Networking */,
@@ -356,6 +362,11 @@
 					9729D5BA1C89F306009002E6 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = SX585CK9M9;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -674,6 +685,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PicsNearMe/PicsNearMe.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -694,6 +706,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PicsNearMe/PicsNearMe.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
